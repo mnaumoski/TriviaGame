@@ -8,12 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-
+	
 	<div class="page-header">
   			<h1>Crazy Ridiculous Facts
   			<br><small>Sheer brilliance: "That's a fact Jack!" by Harry Bright and Jakob Anser</small></h1>
 	</div>
 
+	<div id="time-left"><h2>You have <span id="timer">120</span> seconds</h2><span id="luck"></span></div>
+	<br>
+	<button id="start">Start game</button>
+	<br>
 	<form name="quiz">
 	1. If you put a mirror one light year away from Earth and looked at it through a telescope, you would see, how may years into Earth's past? 
 
@@ -109,16 +113,21 @@
 			</ul>
 
 	<input type="button" value="Get score" onClick="getScore(this.form)">
+
+	<input id="stop" type="button" value="Submit Answers" onClick="getScore(this.form)">
+
 	<input type="reset" value="Clear answers">
 
 	Score = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br>
 	<br>
 	Correct answers: <br>
-	<textarea class="bgclr" name="solutions" wrap="virtural" rows="4" cols="30" disabled></textarea>
+	<textarea class="bgclr" name="solutions" wrap="virtural" rows="10" cols="30" disabled></textarea>
 	<br>
 
 	</form>
 
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>

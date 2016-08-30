@@ -1,3 +1,38 @@
+//timer for 10 questions can be 120 seconds or 12 seconds per question
+
+var number = 10;
+
+$('#start').on('click', start);
+$('#stop').on('click', stop);
+$("input[type=radio]").attr('disabled', true);
+
+function start() {
+	$("input[type=radio]").attr('disabled', false);
+	var number = 120;
+	counter = setInterval(decrement, 1000);
+	$('#start').attr('disabled', true);
+
+
+}
+
+function decrement() {
+	number--;
+	$('#timer').html(number);
+	$('#luck').html("GOOD LUCK!")
+		if (number === 0) {
+			clearInterval(counter);
+			stop();
+			alert("The time is up! Let's see how you scored!");
+		
+		}
+}
+
+function stop() {
+	number = 120;
+	$('#start').attr("disabled", false);
+}
+
+
 var numberOfQuestions = 10; //number of questions in the game
 var numberOfChoices = 3; // number of choices for each question
 var answers = new Array(10); // this array will hold all correct answers
@@ -41,4 +76,6 @@ var getScore = function(form){
 	}
 	form.solutions.value = correctAnswers;
 }
+
+getScore();
 
