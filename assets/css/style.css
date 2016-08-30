@@ -1,18 +1,24 @@
 
 
 ul {
-	margin-top: 1pt;
-	text-align: center;
+	margin: 1pt;
+	text-align: left;
+	padding: 10px;
+
 }
+
 
 body {
 	font-family: Helvetica;
-	text-align: center;
+	text-align: left;
 	background: url('green.jpeg');
 	background-repeat: round;
+	margin-left: 20px;
 }
 
-form {
-	
+.bgclr {
+	background-color: white;
+	color: black;
+	font-weight: bold;
 
 }
