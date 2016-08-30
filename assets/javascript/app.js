@@ -1,6 +1,5 @@
 //timer for 10 questions can be 120 seconds or 12 seconds per question
-
-var number = 10;
+var number = 120;
 
 $('#start').on('click', start);
 $('#stop').on('click', stop);
@@ -66,7 +65,6 @@ var getScore = function(form){
 							if (currentSelection.value == answers[i]) {
 								 score++;
 								 break;
-
 							}
 					}
 		}
@@ -80,6 +78,4 @@ var getScore = function(form){
 	}
 	form.solutions.value = correctAnswers;
 }
-
-getScore();
 
