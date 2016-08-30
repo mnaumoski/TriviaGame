@@ -32,7 +32,7 @@ var getScore = function(form){
 					}
 		}
 	}
-	score = Math.round(score/(numberOfQuestions*100));
+	score = Math.round(score/numberOfQuestions*100);
 	form.percentage.value = score + "%";
 	var correctAnswers="";
 
