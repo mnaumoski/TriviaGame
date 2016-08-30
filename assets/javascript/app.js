@@ -7,12 +7,14 @@ $('#stop').on('click', stop);
 $("input[type=radio]").attr('disabled', true);
 
 function start() {
+
+	$("input:radio").each(function(i) {
+       this.checked = false;
+		});
 	$("input[type=radio]").attr('disabled', false);
 	var number = 120;
 	counter = setInterval(decrement, 1000);
 	$('#start').attr('disabled', true);
-
-
 }
 
 function decrement() {
@@ -21,15 +23,17 @@ function decrement() {
 	$('#luck').html("GOOD LUCK!")
 		if (number === 0) {
 			clearInterval(counter);
-			stop();
 			alert("The time is up! Let's see how you scored!");
-		
+			stop();	
+    
 		}
 }
 
 function stop() {
 	number = 120;
 	$('#start').attr("disabled", false);
+	$("input[type=radio]").attr('disabled', true);
+	
 }
 
 
