@@ -1,9 +1,11 @@
 //timer for 10 questions can be 120 seconds or 12 seconds per question
+
 var number = 120;
 
 $('#start').on('click', start);
 $('#stop').on('click', stop);
 $("input[type=radio]").attr('disabled', true);
+$("#quiz").hide();
 
 function start() {
 
@@ -14,12 +16,13 @@ function start() {
 	var number = 120;
 	counter = setInterval(decrement, 1000);
 	$('#start').attr('disabled', true);
+	$('#quiz').show();
 }
 
 function decrement() {
 	number--;
 	$('#timer').html(number);
-	$('#luck').html("GOOD LUCK!")
+	$('#luck').html("GOOD LUCK!");
 		if (number === 0) {
 			clearInterval(counter);
 			alert("The time is up! Let's see how you scored!");
@@ -32,6 +35,7 @@ function stop() {
 	number = 120;
 	$('#start').attr("disabled", false);
 	$("input[type=radio]").attr('disabled', true);
+	clearInterval(counter);
 	
 }
 
@@ -77,5 +81,7 @@ var getScore = function(form){
 		correctAnswers += i + "." + answers[i-1] +"\r\n";
 	}
 	form.solutions.value = correctAnswers;
-}
+
+	clearInterval(counter);
+};
 
